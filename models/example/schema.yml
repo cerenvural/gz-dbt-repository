@@ -2,13 +2,14 @@ version: 2
 
 sources:
   - name: raw
+    database: data-analytics-469406
     schema: gz_raw_data
     tables:
       - name: sales
-        identifier: raw_gz_sales
+        identifier: raw_sales
 
       - name: product
-        identifier: raw_gz_product
+        identifier: raw_product
 
       - name: ship
-        identifier: raw_gz_ship
+        identifier: raw_ship
