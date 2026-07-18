@@ -8,7 +8,7 @@ with source as (
 select
     date_date,
     orders_id,
-    ptd_id as products_id,
+    pdt_id as products_id,
     revenue,
     quantity
 from source
