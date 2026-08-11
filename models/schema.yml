@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: data-analytics-469406
+    schema: gz_raw_data
+    tables:
+      - name: sales
+        identifier: raw_sales
+        columns:
+          - name: orders_id
+            tests:
+              - not_null
+          - name: pdt_id
+            tests:
+              - not_null
+
+      - name: product
+        identifier: raw_product
+        columns:
+          - name: products_id
+            tests:
+              - unique
+              - not_null
+
+      - name: ship
+        identifier: raw_ship
+        columns:
+          - name: orders_id
+            tests:
+              - unique
+              - not_null
