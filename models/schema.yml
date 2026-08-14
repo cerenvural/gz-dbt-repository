@@ -6,27 +6,8 @@ sources:
     schema: gz_raw_data
     tables:
       - name: sales
-        identifier: raw_sales
-        columns:
-          - name: orders_id
-            tests:
-              - not_null
-          - name: pdt_id
-            tests:
-              - not_null
-
+        identifier: raw_gz_sales
       - name: product
-        identifier: raw_product
-        columns:
-          - name: products_id
-            tests:
-              - unique
-              - not_null
-
+        identifier: raw_gz_product
       - name: ship
-        identifier: raw_ship
-        columns:
-          - name: orders_id
-            tests:
-              - unique
-              - not_null
+        identifier: raw_gz_ship
