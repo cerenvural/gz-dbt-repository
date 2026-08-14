@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_cc_parcel
+    columns:
+      - name: parcel_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_cc_parcel_products
+    columns:
+      - name: parcel_id
+        data_tests:
+          - not_null
+      - name: model_name
+        data_tests:
+          - not_null
+      - name: quantity
+        data_tests:
+          - not_null

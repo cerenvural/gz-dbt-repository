@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: raw_data_circle
+    database: data-analytics-469406
+    schema: raw_data_circle
+    tables:
+      - name: raw_cc_parcel
+      - name: raw_cc_parcel_product
+
+models:
+  - name: cc_parcel
+    columns:
+      - name: parcel_id
+        data_tests:
+          - unique
+          - not_null
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - İptal Edildi
+                  - Devam Ediyor
+                  - Taşınıyor
+                  - Teslim Edildi
+
+  - name: cc_parcel_products
+    columns:
+      - name: parcel_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('cc_parcel')
+                field: parcel_id
+      - name: model_name
+        data_tests:
+          - not_null
+      - name: qty
+        data_tests:
+          - not_null
